@@ -1,0 +1,13 @@
+{
+    "params":
+    {
+        "local_server" : "True",
+        "local_uri" : "mysql://root:@localhost:3306/flask",
+        "prod_uri" : "mysql://root:@localhost:3306/flask",
+        "twitter_url" : "https://twitter.com/login",
+        "blog_name" : "MachineTech",
+        "admin_user" : "taukir707@gmail.com",
+        "admin_pass" : "1234"
+
+    }
+}

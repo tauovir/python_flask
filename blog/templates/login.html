@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+    .padded{
+    padding-left: 420px;
+    padding-right: 531px;
+    padding-top: 64px;
+    }
+</style>
+<div class="text-centre padded">
+<form class="form-signin" action = "/login", method = "post">
+  <img class="mb-4" src="{{url_for('static', filename = 'img/login.jpg') }}" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" name = "username" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" name = "password" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted">{{params['blog_name']}}</p>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+</div>
+{% endblock %}
+

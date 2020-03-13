@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Dash Board  <a href="/logout"><img style = "padding-left: 12px;margin-left: 680px;" src="{{url_for('static', filename = 'img/logout.png') }}" alt="" width="72" height="72"></a>
+  </h2>        
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Sub Title</th>
+        <th>Slug</th>
+        <th>Created date</th>
+        <th>Edit</th>
+        <th>Delete</th> 
+        
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for post in posts %}
+      <tr>
+        <td>{{ post['id']}}</td>
+        <td>{{ post['title']}}</td>
+        <td>{{ post['sub_title']}}</td>
+        <td>{{ post['slug']}}</td>
+        <td>{{ post['created_at']}}</td>
+        <td><a href = "/post/edit/{{post['id']}}">Edit</a></td>
+        <td><a href = "/post/delete/{{post['id']}}">Delete</a></td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
