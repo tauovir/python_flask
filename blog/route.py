@@ -87,9 +87,9 @@ def getPost(post_slug):
     return render_template("post.html", params = params, post = post)
 
 
-@app.route("/post")
-def post():
-    return render_template("post.html", params = params)
+# @app.route("/post")
+# def post():
+#     return render_template("post.html", params = params)
 
 @app.route("/dashboard")
 def dashboard():
@@ -167,8 +167,10 @@ def login():
         password = request.form['password']
         if (username == params['admin_user'] and password == params['admin_pass']):
             session['username'] = username
+            flash("You have successfully logedin")
             return redirect(url_for('dashboard'))
         else:
+            flash("Access denied")
             return render_template("login.html", params = params)
 
     else:

@@ -9,6 +9,18 @@
     }
 </style>
 <div class="text-centre padded">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  
+  <div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  
+
 <form class="form-signin" action = "/login", method = "post">
   <img class="mb-4" src="{{url_for('static', filename = 'img/login.jpg') }}" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
